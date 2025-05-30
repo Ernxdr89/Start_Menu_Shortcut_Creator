@@ -111,6 +111,13 @@ class ShortcutCreatorApp(QMainWindow):
         """Initialize the main window UI"""
         self.setWindowTitle("Start Menu Shortcut Creator")
         self.setGeometry(100, 100, 450, 250)
+        self.setWindowFlags(
+            Qt.Window |
+            Qt.WindowTitleHint |
+            Qt.WindowCloseButtonHint |
+            Qt.WindowMinimizeButtonHint
+        )
+        self.setFixedSize(self.width(), self.height())
 
         # Set window icon (using resource_path for PyInstaller compatibility)
         self.setWindowIcon(self.load_icon('icon.ico'))
